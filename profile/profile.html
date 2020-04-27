@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+    <title>Profile</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Barlow',sans-serif;
+  }
+  body{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+ background-image: radial-gradient( #F5D586, #D9E383);
+   
+  }
+  main{
+      text-align: center;
+      cursor: pointer;
+  }
+ .container{
+    width: 300px;
+    height: 300px;
+    background-image: url("img/avatar.jpeg");
+    background-size: 100% 100%;
+     border:1px solid #f9f9f9;
+     border-radius: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     align-content: center;
+     text-align: center;
+     box-shadow: 0px 0px 25px rgba(0,0,0,0.1);
+     z-index: 5;
+     animation:animate 3s forwards 0.8s ease;
+ }
+ @keyframes animate {
+
+   0%{
+     background-position:300px 0px;
+   }
+   100%{
+     background-position:0px 0px;
+   }
+   
+ }
+ .sm-cont{
+    width: 250px;
+    height: 70px;
+    background-color: #ffff;
+    margin: 0 auto;
+    z-index: 4;
+    border-radius: 5px;
+    box-shadow:0px 5px 20px -5px rgba(0,0,0,0.1);
+   
+ }
+ h2{
+     font-size: 20px;
+     font-weight: 600;
+     text-align: center;
+
+ }
+ .sm-cont p{
+     padding-top: 5px;
+     color:#999;
+     font-size: 15px;
+     font-weight: 500;
+
+ }
+ ul{
+     list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+ }
+ button{
+    width:180px;
+     height:56px;
+     border-radius: 5px;
+     font-size:1.2rem;
+     font-weight: 500;
+     background-color:#F8C164;
+     color:#ffff;
+     border:1px solid #F8C164;
+     outline-color: #F8C164;
+     cursor: pointer;
+     z-index:3;
+     box-shadow:0px 10px 20px -5px rgba(0,0,0,0.1);
+     animation: slide-down 1s forwards  ease-in;
+    
+ }
+ button:hover{
+    background-color:hsl(154, 59%, 51%);
+    border:1px solid hsl(154, 59%, 51%);
+    color:white;
+    transition: all 0.5s ease;
+    
+   }
+   @keyframes slide-down{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+        
+        }
+    100%{
+        transform:  translateY(0px);
+        opacity: 1;
+        }
+}
+
+
+    </style>
+</head>
+<body>
+    <main id="profile" data-tilt>
+    <div class="container">
+     
+    </div>
+    <section class="sm-cont"> 
+         <ul>
+             <li>
+                <h2>200+</h2>
+                <p>Projects</p>
+             </li>
+             <li>
+                <h2>100+</h2>
+                <p>Followers</p>
+             </li>
+             <li>
+                <h2>80+</h2>
+                <p>Following</p>
+             </li>
+         </ul>
+            </section>
+         
+            <button type="submit" >Follow</button>
+        </main>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="tilt.jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+        $('#profile').tilt({
+            maxTilt:15,
+            speed:200
+          
+        });
+
+        });
+        </script>
+</body>
+</html>
